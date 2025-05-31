@@ -42,7 +42,7 @@ const page = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <Navbar />
       {/* Enhanced Hero Section */}
-      <section className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden mt-[10vh]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-8 lg:pr-8">

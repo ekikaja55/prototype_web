@@ -4,7 +4,6 @@ import { Trophy, Shield, ChevronDown, X, Menu } from 'lucide-react';
 import Link from 'next/link';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isAdminDropdownOpen, setIsAdminDropdownOpen] = useState(false);
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
@@ -24,16 +23,6 @@ const Navbar = () => {
         return () => document.removeEventListener('click', handleClickOutside);
     }, [isMenuOpen]);
 
-    // Close admin dropdown when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (isAdminDropdownOpen && !event.target.closest('.admin-dropdown')) {
-                setIsAdminDropdownOpen(false);
-            }
-        };
-        document.addEventListener('click', handleClickOutside);
-        return () => document.removeEventListener('click', handleClickOutside);
-    }, [isAdminDropdownOpen]);
 
     const navItems = [
         { name: 'Home', href: '/' },
@@ -70,36 +59,6 @@ const Navbar = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
                             </Link>
                         ))}
-
-                        {/* Admin Dropdown */}
-                        <div className="relative admin-dropdown">
-                            <button
-                                onClick={() => setIsAdminDropdownOpen(!isAdminDropdownOpen)}
-                                className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                            >
-                                <Shield className="w-4 h-4" />
-                                <span>Admin</span>
-                                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isAdminDropdownOpen ? 'rotate-180' : ''}`} />
-                            </button>
-
-                            {isAdminDropdownOpen && (
-                                <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 py-2 animate-in slide-in-from-top-2 duration-200">
-                                    <Link href="/admin" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
-                                        Dashboard
-                                    </Link>
-                                    <Link href="/admin/users" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
-                                        User Management
-                                    </Link>
-                                    <Link href="/admin/courses" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
-                                        Course Management
-                                    </Link>
-                                    <hr className="my-1 border-gray-100" />
-                                    <Link href="/admin/settings" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
-                                        Settings
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
                     </div>
 
                     {/* Auth Buttons */}
@@ -139,26 +98,17 @@ const Navbar = () => {
                                 {item.name}
                             </Link>
                         ))}
-                        <div className="border-t border-gray-200 pt-4">
-                            <Link
-                                href="/admin"
-                                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                <Shield className="w-4 h-4" />
-                                <span>Admin Dashboard</span>
-                            </Link>
-                        </div>
+                     
                         <div className="flex flex-col space-y-3 pt-4">
                             <Link
-                                href="/login"
+                                href="/auth"
                                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 text-left"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Login
                             </Link>
                             <Link
-                                href="/register"
+                                href="/auth"
                                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold text-center"
                                 onClick={() => setIsMenuOpen(false)}
                             >
