@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Play, Users, Trophy, BookOpen, ArrowRight, Star, Clock, Award, Filter, Search, ChevronDown, Calendar, MapPin, User } from 'lucide-react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+import Link from 'next/link';
 
 const page = () => {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -379,10 +380,10 @@ const page = () => {
                                                 )}
                                             </div>
                                         </div>
-                                        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                                        <Link href={'/transaction/payment'} className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
                                             <span>Enroll Now</span>
                                             <ArrowRight className="w-4 h-4" />
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -431,7 +432,7 @@ const page = () => {
                     </div>
                 </div>
             </section>
-            <Footer/>
+            <Footer />
         </div>
     );
 };
