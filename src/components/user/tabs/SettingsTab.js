@@ -139,7 +139,7 @@ const SettingsTab = ({ userProfile, setUserProfile }) => {
         </div>
         <div>
           <h3 className="text-xl font-bold text-gray-900">
-            {editedProfile.name}
+            Budi Sudarso
           </h3>
           <p className="text-gray-600">
             Member since {new Date(editedProfile.joinDate).toLocaleDateString()}

@@ -61,8 +61,8 @@ const OverviewTab = ({
   };
 
   return (
-    <div className="space-y-8">
-      {/* Welcome Section */}
+    <div className="space-y-8 ">
+      {/* Welcome ection */}
       <div className="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 rounded-3xl p-8 text-white">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
           <div className="flex items-center space-x-4 mb-6 lg:mb-0">

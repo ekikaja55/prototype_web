@@ -91,14 +91,14 @@ const page = () => {
       )}
 
       {/* Main Content */}
-      <div className="lg:ml-64 mt-[-100vh]">
+      <div className="lg:ml-64 mt-[-2     n  00vh]">
         <UserHeader
           activeTab={activeTab}
           setSidebarOpen={setSidebarOpen}
           userProfile={userProfile}
         />
 
-        <main className="p-6 mt-10">{renderContent()}</main>
+        <main className="p-6 ">{renderContent()}</main>
       </div>
     </div>
   );
