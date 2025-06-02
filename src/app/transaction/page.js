@@ -22,8 +22,6 @@ import {
     Trash2,
     Edit3
 } from 'lucide-react';
-import Navbar from '@/components/navbar';
-import Footer from '@/components/footer';
 
 const page = () => {
     const [selectedFilter, setSelectedFilter] = useState('All');
@@ -208,7 +206,6 @@ const page = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
-            <Navbar />
 
             {/* Header Section */}
             <section className="pt-20 pb-8 px-4 sm:px-6 lg:px-8">
@@ -458,7 +455,6 @@ const page = () => {
                 </div>
             </section>
 
-            <Footer />
         </div>
     );
 };

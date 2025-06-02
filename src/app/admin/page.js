@@ -15,7 +15,7 @@ import CategoryModal from '@/components/admin/modals/CategoryModal';
 import InstructorFormModal from '@/components/admin/modals/InstructorFormModal';
 import { useAdminData } from '@/hooks/useAdminData';
 
-const AdminDashboard = () => {
+const page = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [activeTab, setActiveTab] = useState('overview');
     const [searchTerm, setSearchTerm] = useState('');
@@ -242,4 +242,4 @@ const AdminDashboard = () => {
     );
 };
 
-export default AdminDashboard;
+export default page;
